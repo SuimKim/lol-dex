@@ -12,7 +12,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "ddragon.leagueoflegends.com",
         port: "", // 기본 포트면 빈 문자열
-        pathname: "/cdn/14.5.1/img/item/**", // 와일드카드로 모든 하위 경로 허용
+        pathname: "/cdn/14.5.1/img/**", // 와일드카드로 모든 하위 경로 허용
       },
     ],
   },
