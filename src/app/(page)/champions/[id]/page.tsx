@@ -122,8 +122,8 @@ const DetailPage = async ({ params }: { params: Params }) => {
       <Title tag="h3" size="2xl" align="left" margin="sm">
         동맹 팁
       </Title>
-      {champion.allytips.map((tip) => (
-        <Text size="md" align="left">
+      {champion.allytips.map((tip, index) => (
+        <Text key={index} size="md" align="left">
           {tip}
         </Text>
       ))}
@@ -131,8 +131,8 @@ const DetailPage = async ({ params }: { params: Params }) => {
       <Title tag="h3" size="2xl" align="left" margin="sm">
         공격 팁
       </Title>
-      {champion.enemytips.map((tip) => (
-        <Text size="md" align="left">
+      {champion.enemytips.map((tip, index) => (
+        <Text key={index} size="md" align="left">
           {tip}
         </Text>
       ))}
@@ -142,7 +142,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
       </Title>
       <div className="grid grid-cols-3 gap-5">
         {champion.spells.map((skill) => (
-          <SkillCard skill={skill} />
+          <SkillCard key={skill.id} skill={skill} />
         ))}
       </div>
     </>
