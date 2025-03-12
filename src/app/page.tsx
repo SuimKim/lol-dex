@@ -13,21 +13,21 @@ type CardData = {
 export default function Home() {
   const mainCardData: CardData[] = [
     {
-      linkHref: "/champion",
+      linkHref: "/champions",
       imgSrc:
         "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/64008dd57fddfa0a3baad95b72e3bdd13068a97f-1920x1080.jpg",
       imgAlt: "챔피언 목록",
       textLabel: "챔피언 목록 보기",
     },
     {
-      linkHref: "/rotation",
+      linkHref: "/rotations",
       imgSrc:
         "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/510633f8ba622a63f02a88a96b2a28422180d735-1920x1080.jpg",
       imgAlt: "금주 로테이션",
       textLabel: "금주 로테이션 확인",
     },
     {
-      linkHref: "/champion",
+      linkHref: "/items",
       imgSrc:
         "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/7d6799d60e7029c4aa6a1d168ce7560b15ce5adf-1920x1080.jpg",
       imgAlt: "아이템 목록",
@@ -36,7 +36,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="mt-24">
+    <>
       <section className="text-center">
         <Title tag="h1" size="4xl" align="center" margin="none">
           리그오브레전드 정보 앱
@@ -56,7 +56,7 @@ export default function Home() {
           />
         ))}
       </section>
-    </main>
+    </>
   );
 }
 
