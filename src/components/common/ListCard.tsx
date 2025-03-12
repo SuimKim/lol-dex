@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Title from "./Title";
 import Text from "./Text";
+import Link from "next/link";
 
 type Item = {
   version: string;
@@ -30,7 +31,7 @@ type CardsProps = {
 const ListCard = ({ item }: CardsProps) => {
   const imgPath = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/${item.image.full}`;
   return (
-    <CardContainer>
+    <CardContainer pathId={item.id}>
       <Image src={imgPath} width={150} height={150} alt="아이템 이미지" />
       <ContentsContainer>
         <Title tag="h2" size="xl" align="left" margin="none">
@@ -49,12 +50,19 @@ export default ListCard;
 type Props = {
   children: React.ReactNode;
 };
+type CardProps = {
+  children: React.ReactNode;
+  pathId: string;
+};
 
-const CardContainer = ({ children }: Props) => {
+const CardContainer = ({ children, pathId }: CardProps) => {
   return (
-    <div className="border-2 border-black flex flex-col items-center">
+    <Link
+      href={`/champions/${pathId}`}
+      className="border-2 border-black flex flex-col items-center"
+    >
       {children}
-    </div>
+    </Link>
   );
 };
 
