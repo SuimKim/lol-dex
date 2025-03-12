@@ -1,30 +1,35 @@
 import { ReactNode } from "react";
-/**
- * 제목 컴포넌트입니다. font-bold 속성이 기본 설정되어있습니다.
- * @component
- *
- * @prop {Size} [size] - 글자 크기 ( "xl" | "2xl" | "3xl" | "4xl" | "5xl" )
- * @prop {Margin} [margin] - 마진 크기 ( "sm" | "md" | "lg" | "xl" | "2xl" )
- * @prop {Align} [align] - 정렬 위치 ( "left" | "center" | "right" )
- */
+
+type Tag = "h1" | "h2" | "h3" | "h4";
 type Size = "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 type Margin = "none" | "sm" | "md" | "lg" | "xl" | "2xl";
 type Align = "left" | "center" | "right";
 
-type titleProps = {
+type TitleProps = {
+  tag: Tag;
   size: Size;
   margin: Margin;
   align: Align;
   children: ReactNode;
 };
 
+/**
+ * 제목 컴포넌트입니다. font-bold 속성이 기본 설정되어 있습니다.
+ * @component
+ * @param {Tag} tag - 태그 종류 ("h1" | "h2" | "h3" | "h4")
+ * @param {Size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
+ * @param {Margin} [margin="none"] - 마진 크기 ("none" | "sm" | "md" | "lg" | "xl" | "2xl")
+ * @param {Align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
+ * @param {ReactNode} children - 자식 요소
+ */
 const Title = ({
+  tag,
   size = "xl",
   margin = "none",
   align = "left",
   children,
-}: titleProps) => {
-  const baseStyles = "font-bold justify-items-center";
+}: TitleProps) => {
+  const Tag = tag;
 
   const sizeStyles: Record<Size, string> = {
     xl: "text-xl",
@@ -43,11 +48,13 @@ const Title = ({
     "2xl": "m-10",
   };
 
-  const alignStyles: string = `text-${align}`;
+  const alignStyles = `text-${align}`;
+
+  const baseStyles = "font-bold justify-items-center";
 
   const styles = `${baseStyles} ${sizeStyles[size]} ${marginStyles[margin]} ${alignStyles}`;
 
-  return <h1 className={styles}>{children}</h1>;
+  return <Tag className={styles}>{children}</Tag>;
 };
 
 export default Title;
