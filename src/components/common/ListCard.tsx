@@ -3,17 +3,41 @@ import React from "react";
 import Title from "./Title";
 import Text from "./Text";
 
-const ListCard = () => {
-  //   const imgPath = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/item/${item.image.full}`;
+type Item = {
+  version: string;
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  blurb: string;
+  info: { [key: string]: number };
+  image: {
+    full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  tags: string[];
+  partype: string;
+  stats: { [key: string]: number };
+};
+type CardsProps = {
+  item: Item;
+};
+const ListCard = ({ item }: CardsProps) => {
+  const imgPath = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/${item.image.full}`;
   return (
     <CardContainer>
-      <Image src={""} width={150} height={150} alt="아이템 이미지" />
+      <Image src={imgPath} width={150} height={150} alt="아이템 이미지" />
       <ContentsContainer>
         <Title tag="h2" size="xl" align="left" margin="none">
-          이름 들어갈 곳
+          {item.name}
         </Title>
         <Text size="md" align="left">
-          설명 들어갈 곳
+          {item.title}
         </Text>
       </ContentsContainer>
     </CardContainer>
