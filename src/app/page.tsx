@@ -29,7 +29,7 @@ export default function Home() {
     {
       linkHref: "/champion",
       imgSrc:
-        "https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/7b11239cf024358011444e7d70bb2badbb6b33e2-6000x3155.jpg",
+        "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/7d6799d60e7029c4aa6a1d168ce7560b15ce5adf-1920x1080.jpg",
       imgAlt: "아이템 목록",
       textLabel: "아이템 목록 보기",
     },
@@ -70,7 +70,14 @@ type MainCardProps = {
 const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardProps) => {
   return (
     <Link href={linkHref} className="flex flex-col items-center">
-      <Image src={imgSrc} alt={imgAlt} width={600} height={400} />
+      <Image
+        src={imgSrc}
+        alt={imgAlt}
+        width={1920}
+        height={1080}
+        style={{ width: "600px", height: "auto" }}
+        priority
+      />
 
       <Text size="md" align="center">
         {textLabel}
