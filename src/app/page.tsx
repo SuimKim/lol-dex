@@ -1,3 +1,5 @@
+import Text from "@/components/Text";
+import Title from "@/components/Title";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,38 +14,46 @@ export default function Home() {
   return (
     <main className="mt-24">
       <section className="text-center">
-        <h1 className="font-bold text-4xl">리그오브레전드 정보 앱</h1>
-        <p className="mt-5">
+        <Title tag="h1" size="4xl" align="center" margin="none">
+          리그오브레전드 정보 앱
+        </Title>
+        <Text size="md" align="center">
           Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
-        </p>
+        </Text>
       </section>
       <section>
-        <Link href={"/champion"}>
+        <Link href={"/champion"} className="flex flex-col items-center">
           <Image
             src={championsImgPath}
             width={500}
             height={500}
             alt="챔피언 목록"
           />
-          <p>챔피언 목록 보기</p>
+          <Text size="md" align="center">
+            챔피언 목록 보기
+          </Text>
         </Link>
-        <Link href={"/rotation"}>
+        <Link href={"/rotation"} className="flex flex-col items-center">
           <Image
             src={rotationsImgPath}
             width={500}
             height={500}
             alt="금주 로테이션"
           />
-          <p>금주 로테이션 확인</p>
+          <Text size="md" align="center">
+            금주 로테이션 확인
+          </Text>
         </Link>
-        <Link href={"/items"}>
+        <Link href={"/items"} className="flex flex-col items-center">
           <Image
             src={itemsImgPath}
             width={500}
             height={500}
             alt="아이템 목록"
           />
-          <p>아이템 목록 보기</p>
+          <Text size="md" align="center">
+            아이템 목록 보기
+          </Text>
         </Link>
       </section>
     </main>
