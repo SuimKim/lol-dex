@@ -2,10 +2,7 @@ import Image from "next/image";
 import { DetailChampion, Spell } from "@/types/shared/api/champion.types";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
-
-type Params = {
-  id: string;
-};
+import { Params } from "@/types/pages/Champion.types";
 
 const DetailPage = async ({ params }: { params: Params }) => {
   const id: string = params.id;
