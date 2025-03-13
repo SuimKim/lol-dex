@@ -3,10 +3,7 @@ import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 import { ChildrenProps } from "@/types/shared/common.types";
 import { Item } from "@/types/shared/api/item.types";
-
-type ItemCardProps = {
-  item: Item;
-};
+import { ItemCardProps } from "@/types/components/ItemCard.types";
 
 const ItemCard = ({ item }: ItemCardProps) => {
   const imgPath = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/item/${item.image.full}`;

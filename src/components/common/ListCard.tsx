@@ -2,13 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
-import { Champion } from "@/types/shared/api/champion.types";
 import { ChildrenProps } from "@/types/shared/common.types";
+import { ListCardProps } from "@/types/components/ListCard.types";
 
-type CardsProps = {
-  item: Champion;
-};
-const ListCard = ({ item }: CardsProps) => {
+const ListCard = ({ item }: ListCardProps) => {
   const imgPath = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${item.id}_0.jpg`;
   return (
     <CardContainer pathId={item.id}>
