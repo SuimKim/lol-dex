@@ -1,17 +1,11 @@
-import Text from "@/components/common/Text";
-import Title from "@/components/common/Title";
 import Image from "next/image";
 import Link from "next/link";
+import Text from "@/components/common/Text";
+import Title from "@/components/common/Title";
+import { MainCardData, MainCardProps } from "@/types/pages/Home.types";
 
-type CardData = {
-  linkHref: string;
-  imgSrc: string;
-  imgAlt: string;
-  textLabel: string;
-};
-
-export default function Home() {
-  const mainCardData: CardData[] = [
+const HomePage = () => {
+  const mainCardData: MainCardData[] = [
     {
       linkHref: "/champions",
       imgSrc:
@@ -58,14 +52,8 @@ export default function Home() {
       </section>
     </>
   );
-}
-
-type MainCardProps = {
-  linkHref: string;
-  imgSrc: string;
-  imgAlt: string;
-  textLabel: string;
 };
+export default HomePage;
 
 const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardProps) => {
   return (
