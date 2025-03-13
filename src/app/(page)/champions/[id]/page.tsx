@@ -89,7 +89,7 @@ type test = {
 
 const DetailPage = async ({ params }: { params: Params }) => {
   const id: string = params.id;
-  const imgPath: string = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/${id}.png`;
+  const imgPath: string = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`;
 
   const versionRes: Response = await fetch(
     "https://ddragon.leagueoflegends.com/api/versions.json"
@@ -111,7 +111,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
       <Title tag="h2" size="2xl" margin="md" align="left">
         {champion.title}
       </Title>
-      <Image src={imgPath} alt="챔피언 이미지" width={200} height={200} />
+      <Image src={imgPath} alt="챔피언 이미지" width={1000} height={600} />
       <Title tag="h3" size="2xl" align="left" margin="sm">
         소개
       </Title>

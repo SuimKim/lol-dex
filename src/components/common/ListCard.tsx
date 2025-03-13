@@ -29,10 +29,10 @@ type CardsProps = {
   item: Item;
 };
 const ListCard = ({ item }: CardsProps) => {
-  const imgPath = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/${item.image.full}`;
+  const imgPath = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${item.id}_0.jpg`;
   return (
     <CardContainer pathId={item.id}>
-      <Image src={imgPath} width={150} height={150} alt="아이템 이미지" />
+      <Image src={imgPath} width={300} height={150} alt="아이템 이미지" />
       <ContentsContainer>
         <Title tag="h2" size="xl" align="left" margin="none">
           {item.name}
