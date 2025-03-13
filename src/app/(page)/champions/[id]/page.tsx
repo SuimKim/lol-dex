@@ -1,90 +1,10 @@
+import Image from "next/image";
+import { DetailChampion, Spell } from "@/types/pages/champion.types";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
-import Image from "next/image";
 
 type Params = {
   id: string;
-};
-type Skill = {
-  id: string;
-  name: string;
-  description: string;
-  tooltip: string;
-  leveltip: { [key: string]: string[] };
-  maxrank: number;
-  cooldown: number[];
-  cooldownBurn: string;
-  cost: number[];
-  costBurn: string;
-  datavalues: {};
-  effect: (number[] | null)[];
-  effectBurn: (string | null)[];
-  vars: [];
-  costType: string;
-  maxammo: string;
-  range: number[];
-  rangeBurn: string;
-  image: {
-    full: string;
-    sprite: string;
-    group: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
-  resource: string;
-};
-type test = {
-  type: string;
-  format: string;
-  version: string;
-  data: {
-    [key: string]: {
-      id: string;
-      key: string;
-      name: string;
-      title: string;
-      image: {
-        full: string;
-        sprite: string;
-        group: string;
-        x: number;
-        y: number;
-        w: number;
-        h: number;
-      };
-      skins: {
-        id: string;
-        num: number;
-        name: string;
-        chromas: false;
-      }[];
-      lore: string;
-      blurb: string;
-      allytips: string[];
-      enemytips: string[];
-      tags: string[];
-      partype: string;
-      info: { [key: string]: number };
-      stats: { [key: string]: number };
-      spells: Skill[];
-      passive: {
-        name: string;
-        description: string;
-        image: {
-          full: string;
-          sprite: string;
-          group: string;
-          x: number;
-          y: number;
-          w: number;
-          h: number;
-        };
-      };
-      recommended: [];
-    };
-  };
 };
 
 const DetailPage = async ({ params }: { params: Params }) => {
@@ -101,7 +21,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
       cache: "no-store",
     }
   );
-  const { data }: test = await res.json();
+  const { data }: DetailChampion = await res.json();
   const champion = data[id];
   return (
     <>
@@ -151,7 +71,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
 
 export default DetailPage;
 
-const SkillCard = ({ skill }: { skill: Skill }) => {
+const SkillCard = ({ skill }: { skill: Spell }) => {
   const imgPath: string = `https://ddragon.leagueoflegends.com/cdn/14.5.1/img/spell/${skill.image.full}`;
 
   return (

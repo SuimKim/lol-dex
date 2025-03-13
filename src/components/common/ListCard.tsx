@@ -1,32 +1,11 @@
+import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import { Champion } from "@/types/pages/champion.types";
 import Title from "./Title";
 import Text from "./Text";
-import Link from "next/link";
 
-type Item = {
-  version: string;
-  id: string;
-  key: string;
-  name: string;
-  title: string;
-  blurb: string;
-  info: { [key: string]: number };
-  image: {
-    full: string;
-    sprite: string;
-    group: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
-  tags: string[];
-  partype: string;
-  stats: { [key: string]: number };
-};
 type CardsProps = {
-  item: Item;
+  item: Champion;
 };
 const ListCard = ({ item }: CardsProps) => {
   const imgPath = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${item.id}_0.jpg`;
@@ -49,13 +28,10 @@ export default ListCard;
 
 type Props = {
   children: React.ReactNode;
-};
-type CardProps = {
-  children: React.ReactNode;
-  pathId: string;
+  pathId?: string;
 };
 
-const CardContainer = ({ children, pathId }: CardProps) => {
+const CardContainer = ({ children, pathId }: Props) => {
   return (
     <Link
       href={`/champions/${pathId}`}

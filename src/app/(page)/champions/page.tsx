@@ -1,34 +1,6 @@
+import { Champion, ChampionData } from "@/types/pages/champion.types";
 import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
-
-type Data = {
-  type: string;
-  format: string;
-  version: string;
-  data: { [key: string]: Item };
-};
-
-type Item = {
-  version: string;
-  id: string;
-  key: string;
-  name: string;
-  title: string;
-  blurb: string;
-  info: { [key: string]: number };
-  image: {
-    full: string;
-    sprite: string;
-    group: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
-  tags: string[];
-  partype: string;
-  stats: { [key: string]: number };
-};
 
 const ChampionPage = async () => {
   const versionRes: Response = await fetch(
@@ -43,8 +15,8 @@ const ChampionPage = async () => {
       },
     }
   );
-  const { data }: Data = await res.json();
-  const itemList: [string, Item][] = Object.entries(data);
+  const { data }: ChampionData = await res.json();
+  const itemList: [string, Champion][] = Object.entries(data);
 
   return (
     <>
