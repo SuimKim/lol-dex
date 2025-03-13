@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
+import { ChildrenProps } from "@/types/shared/common.types";
 import { Item } from "@/types/pages/item.types";
-import Image from "next/image";
 
 type ItemCardProps = {
   item: Item;
@@ -26,12 +27,7 @@ const ItemCard = ({ item }: ItemCardProps) => {
 
 export default ItemCard;
 
-type Props = {
-  children: React.ReactNode;
-  pathId?: string;
-};
-
-const CardContainer = ({ children }: Props) => {
+const CardContainer = ({ children }: ChildrenProps) => {
   return (
     <div className="border-2 border-black flex flex-col items-center">
       {children}
@@ -39,6 +35,6 @@ const CardContainer = ({ children }: Props) => {
   );
 };
 
-const ContentsContainer = ({ children }: Props) => {
+const ContentsContainer = ({ children }: ChildrenProps) => {
   return <div className="flex flex-col gap-2 p-2">{children}</div>;
 };

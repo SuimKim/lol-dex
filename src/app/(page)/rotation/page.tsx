@@ -1,6 +1,7 @@
 import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
 import { Champion, ChampionData } from "@/types/pages/champion.types";
+import { ChildrenProps } from "@/types/shared/common.types";
 
 const RotationPage = async () => {
   const apiKey = process.env.RIOT_API_KEY;
@@ -47,7 +48,7 @@ const RotationPage = async () => {
 
 export default RotationPage;
 
-const ListGridContainer = ({ children }: { children: React.ReactNode }) => {
+const ListGridContainer = ({ children }: ChildrenProps) => {
   return (
     <section className="w-11/12 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-5 border-2">
       {children}

@@ -1,6 +1,7 @@
 import Title from "@/components/common/Title";
 import ItemCard from "@/components/features/items/ItemCard";
 import { Item, ItemData } from "@/types/pages/item.types";
+import { ChildrenProps } from "@/types/shared/common.types";
 
 const page = async () => {
   const res: Response = await fetch(
@@ -27,7 +28,7 @@ const page = async () => {
 
 export default page;
 
-const ListGridContainer = ({ children }: { children: React.ReactNode }) => {
+const ListGridContainer = ({ children }: ChildrenProps) => {
   return (
     <section className="w-11/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 p-5 border-2">
       {children}

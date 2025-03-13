@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Champion } from "@/types/pages/champion.types";
 import Title from "./Title";
 import Text from "./Text";
+import { Champion } from "@/types/pages/champion.types";
+import { ChildrenProps } from "@/types/shared/common.types";
 
 type CardsProps = {
   item: Champion;
@@ -26,12 +27,7 @@ const ListCard = ({ item }: CardsProps) => {
 
 export default ListCard;
 
-type Props = {
-  children: React.ReactNode;
-  pathId?: string;
-};
-
-const CardContainer = ({ children, pathId }: Props) => {
+const CardContainer = ({ children, pathId }: ChildrenProps) => {
   return (
     <Link
       href={`/champions/${pathId}`}
@@ -42,6 +38,6 @@ const CardContainer = ({ children, pathId }: Props) => {
   );
 };
 
-const ContentsContainer = ({ children }: Props) => {
+const ContentsContainer = ({ children }: ChildrenProps) => {
   return <div className="flex flex-col gap-2 p-2">{children}</div>;
 };
