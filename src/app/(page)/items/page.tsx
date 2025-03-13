@@ -1,6 +1,6 @@
 import Title from "@/components/common/Title";
 import ItemCard from "@/components/features/items/ItemCard";
-import { Item, ItemData } from "@/types/riot/item.types";
+import { Item, ItemData } from "@/types/pages/item.types";
 
 const page = async () => {
   const res: Response = await fetch(

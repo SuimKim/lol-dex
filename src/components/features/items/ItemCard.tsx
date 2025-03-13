@@ -1,6 +1,6 @@
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
-import { Item } from "@/types/riot/item.types";
+import { Item } from "@/types/pages/item.types";
 import Image from "next/image";
 
 type ItemCardProps = {
