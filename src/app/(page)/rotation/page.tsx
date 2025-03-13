@@ -1,34 +1,6 @@
 import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
-
-type Data = {
-  type: string;
-  format: string;
-  version: string;
-  data: { [key: string]: Item };
-};
-
-type Item = {
-  version: string;
-  id: string;
-  key: string;
-  name: string;
-  title: string;
-  blurb: string;
-  info: { [key: string]: number };
-  image: {
-    full: string;
-    sprite: string;
-    group: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
-  tags: string[];
-  partype: string;
-  stats: { [key: string]: number };
-};
+import { Champion, ChampionData } from "@/types/pages/champion.types";
 
 const RotationPage = async () => {
   const apiKey = process.env.RIOT_API_KEY;
@@ -51,10 +23,10 @@ const RotationPage = async () => {
   const res: Response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version[0]}/data/ko_KR/champion.json`
   );
-  const { data }: Data = await res.json();
-  const itemList: [string, Item][] = Object.entries(data);
+  const { data }: ChampionData = await res.json();
+  const itemList: [string, Champion][] = Object.entries(data);
 
-  const test: [string, Item][] = itemList.filter(([id, item]) =>
+  const test: [string, Champion][] = itemList.filter(([id, item]) =>
     freeChampionIds.map(String).includes(item.key)
   );
   console.log("test", test);
