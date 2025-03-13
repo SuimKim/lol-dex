@@ -1,23 +1,14 @@
-import { ReactNode } from "react";
+import { TextProps, TextSize } from "@/types/common";
 /**
  * @component
  *
- * @param {Size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
- * @param {Align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
+ * @prop {size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
+ * @prop {align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
  */
-type Size = "xs" | "sm" | "md" | "lg" | "xl";
-type Align = "left" | "center" | "right";
-
-type titleProps = {
-  size: Size;
-  align: Align;
-  children: ReactNode;
-};
-
-const Text = ({ size = "md", align = "left", children }: titleProps) => {
+const Text = ({ size = "md", align = "left", children }: TextProps) => {
   const baseStyles = "justify-items-center";
 
-  const sizeStyles: Record<Size, string> = {
+  const sizeStyles: Record<TextSize, string> = {
     xs: "text-xs",
     sm: "text-sm",
     md: "text-md",
