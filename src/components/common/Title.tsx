@@ -1,25 +1,13 @@
+import { TitleMargin, TitleProps, TitleSize } from "@/types/common";
 import { ReactNode } from "react";
 /**
  * 제목 컴포넌트입니다. font-bold 속성이 기본 설정되어 있습니다.
  * @component
- * @param {Tag} tag - 태그 종류 ("h1" | "h2" | "h3" | "h4")
- * @param {Size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
- * @param {Margin} [margin="none"] - 마진 크기 ("none" | "sm" | "md" | "lg" | "xl" | "2xl")
- * @param {Align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
- * @param {ReactNode} children - 자식 요소
+ * @prop {tag} tag - 태그 종류 ("h1" | "h2" | "h3" | "h4")
+ * @prop {size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
+ * @prop {margin} [margin="none"] - 마진 크기 ("none" | "sm" | "md" | "lg" | "xl" | "2xl")
+ * @prop {align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
  */
-type Tag = "h1" | "h2" | "h3" | "h4";
-type Size = "xl" | "2xl" | "3xl" | "4xl" | "5xl";
-type Margin = "none" | "sm" | "md" | "lg" | "xl" | "2xl";
-type Align = "left" | "center" | "right";
-
-type TitleProps = {
-  tag: Tag;
-  size: Size;
-  margin: Margin;
-  align: Align;
-  children: ReactNode;
-};
 
 const Title = ({
   tag,
@@ -30,7 +18,7 @@ const Title = ({
 }: TitleProps) => {
   const Tag = tag;
 
-  const sizeStyles: Record<Size, string> = {
+  const sizeStyles: Record<TitleSize, string> = {
     xl: "text-xl",
     "2xl": "text-2xl",
     "3xl": "text-3xl",
@@ -38,7 +26,7 @@ const Title = ({
     "5xl": "text-5xl",
   };
 
-  const marginStyles: Record<Margin, string> = {
+  const marginStyles: Record<TitleMargin, string> = {
     none: "",
     sm: "m-2",
     md: "m-4",
