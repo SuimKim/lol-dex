@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
-import { Champion } from "@/types/pages/champion.types";
+import { Champion } from "@/types/shared/api/champion.types";
 import { ChildrenProps } from "@/types/shared/common.types";
 
 type CardsProps = {

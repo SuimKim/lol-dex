@@ -1,6 +1,6 @@
 import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
-import { Champion, ChampionData } from "@/types/pages/champion.types";
+import { Champion, ChampionData } from "@/types/shared/api/champion.types";
 import { ChildrenProps } from "@/types/shared/common.types";
 
 const RotationPage = async () => {

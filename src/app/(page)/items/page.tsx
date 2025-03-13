@@ -1,6 +1,6 @@
 import Title from "@/components/common/Title";
 import ItemCard from "@/components/features/items/ItemCard";
-import { Item, ItemData } from "@/types/pages/item.types";
+import { Item, ItemData } from "@/types/shared/api/item.types";
 import { ChildrenProps } from "@/types/shared/common.types";
 
 const page = async () => {

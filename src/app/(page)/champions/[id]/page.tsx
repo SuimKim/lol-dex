@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DetailChampion, Spell } from "@/types/pages/champion.types";
+import { DetailChampion, Spell } from "@/types/shared/api/champion.types";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 

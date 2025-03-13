@@ -2,7 +2,7 @@ import Image from "next/image";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 import { ChildrenProps } from "@/types/shared/common.types";
-import { Item } from "@/types/pages/item.types";
+import { Item } from "@/types/shared/api/item.types";
 
 type ItemCardProps = {
   item: Item;
