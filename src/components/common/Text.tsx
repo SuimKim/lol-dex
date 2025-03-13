@@ -1,4 +1,4 @@
-import { TextProps, TextSize } from "@/types/common";
+import { TextProps } from "@/types/components/common.types";
 /**
  * @component
  *
@@ -8,7 +8,7 @@ import { TextProps, TextSize } from "@/types/common";
 const Text = ({ size = "md", align = "left", children }: TextProps) => {
   const baseStyles = "justify-items-center";
 
-  const sizeStyles: Record<TextSize, string> = {
+  const sizeStyles: Record<TextProps["size"], string> = {
     xs: "text-xs",
     sm: "text-sm",
     md: "text-md",
