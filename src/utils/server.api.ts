@@ -1,4 +1,4 @@
-import { Champion, ChampionData } from "@/types/shared/api/champion.types";
+import { Champion } from "@/types/shared/api/champion.types";
 
 const getVersion: () => Promise<string[]> = async () => {
   const res: Response = await fetch(
@@ -20,6 +20,6 @@ export const getChampionList: () => Promise<{
       },
     }
   );
-  const { data }: ChampionData = await res.json();
+  const { data }: { data: { [key: string]: Champion } } = await res.json();
   return data;
 };

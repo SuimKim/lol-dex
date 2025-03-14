@@ -19,10 +19,3 @@ export type Champion = {
   partype: string;
   stats: { [key: string]: number };
 };
-
-export type ChampionData = {
-  type: string;
-  format: string;
-  version: string;
-  data: { [key: string]: Champion };
-};
