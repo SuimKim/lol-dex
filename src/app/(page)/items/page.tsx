@@ -1,7 +1,7 @@
+import type { Item, ItemData } from "@/types/shared/api/item.types";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
-import { Item, ItemData } from "@/types/shared/api/item.types";
 import { ITEM_IMG_PATH } from "@/constants";
 
 const page = async () => {
