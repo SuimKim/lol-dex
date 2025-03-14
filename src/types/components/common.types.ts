@@ -1,6 +1,5 @@
-import { Champion } from "../shared/riot.api.types";
+import { Champion, Item } from "../shared/riot.api.types";
 import { ChildrenProps } from "../shared/common.types";
-import { Item } from "../shared/api/item.types";
 
 // "@/components/common/Text.tsx"
 export type TextProps = ChildrenProps & {
