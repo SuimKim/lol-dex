@@ -1,4 +1,4 @@
-import { Champion } from "../shared/api/champion.types";
+import { Champion } from "../shared/riot.api.types";
 import { ChildrenProps } from "../shared/common.types";
 import { Item } from "../shared/api/item.types";
 
