@@ -2,6 +2,7 @@ import {
   Champion,
   ChampionDetail,
   ChampionRotation,
+  Item,
 } from "@/types/shared/riot.api.types";
 
 const getVersion: () => Promise<string[]> = async () => {
@@ -56,5 +57,16 @@ export const getRotation: () => Promise<ChampionRotation> = async () => {
     }
   );
   const data = await res.json();
+  return data;
+};
+
+export const getItem = async () => {
+  const res: Response = await fetch(
+    "https://ddragon.leagueoflegends.com/cdn/14.5.1/data/ko_KR/item.json",
+    {
+      cache: "force-cache",
+    }
+  );
+  const { data }: { data: { [key: string]: Item } } = await res.json();
   return data;
 };
