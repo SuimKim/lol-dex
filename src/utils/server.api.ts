@@ -1,4 +1,4 @@
-import { fetchReturnValue } from "@/types/shared/common.types";
+import type { fetchReturnValue } from "@/types/shared/common.types";
 import type {
   Champion,
   ChampionDetail,
