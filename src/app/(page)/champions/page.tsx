@@ -1,4 +1,4 @@
-import type { Champion } from "@/types/shared/api/champion.types";
+import type { Champion } from "@/types/shared/riot.api.types";
 import { getChampionList } from "@/utils/server.api";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
