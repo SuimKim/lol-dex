@@ -1,8 +1,8 @@
 import ListCard from "@/components/common/ListCard";
+import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
-import { ITEM_IMG_PATH } from "@/constants";
 import { Item, ItemData } from "@/types/shared/api/item.types";
-import { ChildrenProps } from "@/types/shared/common.types";
+import { ITEM_IMG_PATH } from "@/constants";
 
 const page = async () => {
   const res: Response = await fetch(
@@ -32,11 +32,3 @@ const page = async () => {
 };
 
 export default page;
-
-const ListGridContainer = ({ children }: ChildrenProps) => {
-  return (
-    <section className="w-11/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 p-5 border-2">
-      {children}
-    </section>
-  );
-};
