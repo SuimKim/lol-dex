@@ -1,4 +1,5 @@
-import {
+import { fetchReturnValue } from "@/types/shared/common.types";
+import type {
   Champion,
   ChampionDetail,
   ChampionRotation,
@@ -13,9 +14,9 @@ const getVersion: () => Promise<string[]> = async () => {
   return data;
 };
 
-export const getChampionList: () => Promise<{
-  [key: string]: Champion;
-}> = async () => {
+export const getChampionList: () => Promise<
+  fetchReturnValue<Champion>
+> = async () => {
   const version = await getVersion();
   const res: Response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version[0]}/data/ko_KR/champion.json`,
@@ -25,13 +26,13 @@ export const getChampionList: () => Promise<{
       },
     }
   );
-  const { data }: { data: { [key: string]: Champion } } = await res.json();
+  const { data }: { data: fetchReturnValue<Champion> } = await res.json();
   return data;
 };
 
-export const getChampionDetail: (id: string) => Promise<{
-  [key: string]: ChampionDetail;
-}> = async (id) => {
+export const getChampionDetail: (
+  id: string
+) => Promise<fetchReturnValue<ChampionDetail>> = async (id) => {
   const version = await getVersion();
   const res: Response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version[0]}/data/ko_KR/champion/${id}.json`,
@@ -39,8 +40,7 @@ export const getChampionDetail: (id: string) => Promise<{
       cache: "no-store",
     }
   );
-  const { data }: { data: { [key: string]: ChampionDetail } } =
-    await res.json();
+  const { data }: { data: fetchReturnValue<ChampionDetail> } = await res.json();
   return data;
 };
 
@@ -60,13 +60,13 @@ export const getRotation: () => Promise<ChampionRotation> = async () => {
   return data;
 };
 
-export const getItem = async () => {
+export const getItem: () => Promise<fetchReturnValue<Item>> = async () => {
   const res: Response = await fetch(
     "https://ddragon.leagueoflegends.com/cdn/14.5.1/data/ko_KR/item.json",
     {
       cache: "force-cache",
     }
   );
-  const { data }: { data: { [key: string]: Item } } = await res.json();
+  const { data }: { data: fetchReturnValue<Item> } = await res.json();
   return data;
 };
