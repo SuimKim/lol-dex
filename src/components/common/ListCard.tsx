@@ -1,12 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
 import { ChildrenProps } from "@/types/shared/common.types";
-import { ItemCardProps } from "@/types/components/ItemCard.types";
-import { Champion } from "@/types/shared/api/champion.types";
+import { ListCardProps } from "@/types/components/ListCard.types";
 
-const ListCard = ({ item, imgPath }: ItemCardProps) => {
+const ListCard = ({ item, imgPath }: ListCardProps) => {
   return (
     <CardContainer>
       <Image src={imgPath} width={300} height={150} alt="아이템 이미지" />
