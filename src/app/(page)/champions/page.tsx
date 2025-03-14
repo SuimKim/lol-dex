@@ -1,7 +1,8 @@
 import ListCard from "@/components/common/ListCard";
+import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
+import { CHAMPION_LIST_IMG_PATH } from "@/constants";
 import { Champion, ChampionData } from "@/types/shared/api/champion.types";
-import { ChildrenProps } from "@/types/shared/common.types";
 
 const ChampionPage = async () => {
   const versionRes: Response = await fetch(
@@ -25,8 +26,12 @@ const ChampionPage = async () => {
         챔피언 목록
       </Title>
       <ListGridContainer>
-        {itemList.map((item) => (
-          <ListCard key={item[1].id} item={item[1]} />
+        {itemList.map(([name, item]) => (
+          <ListCard
+            key={name}
+            item={item}
+            imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
+          />
         ))}
       </ListGridContainer>
     </>
@@ -34,11 +39,3 @@ const ChampionPage = async () => {
 };
 
 export default ChampionPage;
-
-const ListGridContainer = ({ children }: ChildrenProps) => {
-  return (
-    <section className="w-11/12 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-5 border-2">
-      {children}
-    </section>
-  );
-};

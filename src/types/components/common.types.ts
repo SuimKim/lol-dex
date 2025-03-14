@@ -1,4 +1,6 @@
+import { Champion } from "../shared/api/champion.types";
 import { ChildrenProps } from "../shared/common.types";
+import { Item } from "../shared/api/item.types";
 
 // "@/components/common/Text.tsx"
 export type TextProps = ChildrenProps & {
@@ -12,4 +14,10 @@ export type TitleProps = ChildrenProps & {
   size: "xl" | "2xl" | "3xl" | "4xl" | "5xl";
   margin: "none" | "sm" | "md" | "lg" | "xl" | "2xl";
   align: "left" | "center" | "right";
+};
+
+// "@/components/common/ListCard.tsx"
+export type ListCardProps = {
+  item: Champion | Item;
+  imgPath: string;
 };

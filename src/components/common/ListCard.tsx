@@ -1,21 +1,19 @@
-import Link from "next/link";
 import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
 import { ChildrenProps } from "@/types/shared/common.types";
-import { ListCardProps } from "@/types/components/ListCard.types";
+import { ListCardProps } from "@/types/components/common.types";
 
-const ListCard = ({ item }: ListCardProps) => {
-  const imgPath = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${item.id}_0.jpg`;
+const ListCard = ({ item, imgPath }: ListCardProps) => {
   return (
-    <CardContainer pathId={item.id}>
+    <CardContainer>
       <Image src={imgPath} width={300} height={150} alt="아이템 이미지" />
       <ContentsContainer>
         <Title tag="h2" size="xl" align="left" margin="none">
           {item.name}
         </Title>
         <Text size="md" align="left">
-          {item.title}
+          {"title" in item ? item.title : item.plaintext}
         </Text>
       </ContentsContainer>
     </CardContainer>
@@ -24,14 +22,11 @@ const ListCard = ({ item }: ListCardProps) => {
 
 export default ListCard;
 
-const CardContainer = ({ children, pathId }: ChildrenProps) => {
+const CardContainer = ({ children }: ChildrenProps) => {
   return (
-    <Link
-      href={`/champions/${pathId}`}
-      className="border-2 border-black flex flex-col items-center"
-    >
+    <div className="border-2 border-black flex flex-col items-center">
       {children}
-    </Link>
+    </div>
   );
 };
 
