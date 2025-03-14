@@ -2,7 +2,7 @@ import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
 import { ChildrenProps } from "@/types/shared/common.types";
-import { ListCardProps } from "@/types/components/ListCard.types";
+import { ListCardProps } from "@/types/components/common.types";
 
 const ListCard = ({ item, imgPath }: ListCardProps) => {
   return (
