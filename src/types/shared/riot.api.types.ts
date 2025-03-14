@@ -95,3 +95,7 @@ export type Spell = {
   };
   resource: string;
 };
+
+export type ChampionRotation = {
+  [key: string]: number[];
+};
