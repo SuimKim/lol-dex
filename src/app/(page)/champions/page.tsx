@@ -7,7 +7,7 @@ import { CHAMPION_LIST_IMG_PATH } from "@/constants";
 
 const ChampionPage = async () => {
   const championData = await getChampionList();
-  const itemList: [string, Champion][] = Object.entries(championData);
+  const itemList: Champion[] = Object.values(championData);
 
   return (
     <>
@@ -15,9 +15,9 @@ const ChampionPage = async () => {
         챔피언 목록
       </Title>
       <ListGridContainer>
-        {itemList.map(([name, item]) => (
+        {itemList.map((item) => (
           <ListCard
-            key={name}
+            key={item.id}
             item={item}
             imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
           />
