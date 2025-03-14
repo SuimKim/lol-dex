@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layouts/Header";
 import { ChildrenProps } from "@/types/shared/common.types";
+import Provider from "./Provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: Readonly<ChildrenProps>) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <main className="mt-24">{children}</main>
+        <Provider>
+          <main className="mt-24">{children}</main>
+        </Provider>
       </body>
     </html>
   );
