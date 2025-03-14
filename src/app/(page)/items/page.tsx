@@ -1,5 +1,6 @@
+import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
-import ItemCard from "@/components/features/items/ItemCard";
+import { ITEM_IMG_PATH } from "@/constants";
 import { Item, ItemData } from "@/types/shared/api/item.types";
 import { ChildrenProps } from "@/types/shared/common.types";
 
@@ -18,8 +19,12 @@ const page = async () => {
         아이템 목록
       </Title>
       <ListGridContainer>
-        {itemList.map((item) => (
-          <ItemCard key={item[0]} item={item[1]} />
+        {itemList.map(([name, item]) => (
+          <ListCard
+            key={name}
+            item={item}
+            imgPath={`${ITEM_IMG_PATH}/${item.image.full}`}
+          />
         ))}
       </ListGridContainer>
     </>

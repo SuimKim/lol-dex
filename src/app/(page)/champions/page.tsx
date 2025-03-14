@@ -1,5 +1,6 @@
 import ListCard from "@/components/common/ListCard";
 import Title from "@/components/common/Title";
+import { CHAMPION_LIST_IMG_PATH } from "@/constants";
 import { Champion, ChampionData } from "@/types/shared/api/champion.types";
 import { ChildrenProps } from "@/types/shared/common.types";
 
@@ -25,8 +26,12 @@ const ChampionPage = async () => {
         챔피언 목록
       </Title>
       <ListGridContainer>
-        {itemList.map((item) => (
-          <ListCard key={item[1].id} item={item[1]} />
+        {itemList.map(([name, item]) => (
+          <ListCard
+            key={name}
+            item={item}
+            imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
+          />
         ))}
       </ListGridContainer>
     </>
