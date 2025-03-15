@@ -49,7 +49,7 @@ export const getChampionDetail = async (
 
 export const getRotation = async (): Promise<ChampionRotation> => {
   console.log("로테이션 번호 API 호출 시간:", new Date().toISOString());
-  const res: Response = await fetch("http://localhost:3000/api", {
+  const res: Response = await fetch("https://lol-dex-two.vercel.app/api", {
     method: "GET",
   });
   const data: ChampionRotation = await res.json();
