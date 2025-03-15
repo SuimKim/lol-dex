@@ -18,6 +18,7 @@ const Title = ({
   const Tag = tag;
 
   const sizeStyles: Record<TitleProps["size"], string> = {
+    xs: "text-sm md:text-md lg:text-lg",
     sm: "text-md md:text-lg lg:text-xl",
     md: "text-lg md:text-xl lg:text-2xl",
     lg: "text-xl md:text-2xl lg:text-3xl",
