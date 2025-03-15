@@ -9,3 +9,8 @@ export const CHAMPION_DETAIL_IMG_PATH: string =
 
 export const SPELL_IMG_PATH: string =
   "https://ddragon.leagueoflegends.com/cdn/14.5.1/img/spell";
+
+export const HOME: string = "/";
+export const CHAMPION: string = "/champions";
+export const ITEMS: string = "/items";
+export const ROTATIONS: string = "/rotations";
