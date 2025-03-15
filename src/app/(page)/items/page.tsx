@@ -10,7 +10,7 @@ const page = async () => {
   const itemList: Item[] = Object.values(itemData);
   return (
     <>
-      <Title tag="h1" size="lg" margin="lg" align="center">
+      <Title tag="h1" size="xl" margin="lg" align="center">
         아이템 목록
       </Title>
       <ListGridContainer>
