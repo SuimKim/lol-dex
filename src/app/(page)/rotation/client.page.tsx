@@ -1,49 +1,31 @@
 "use client";
 
+import useRotation from "@/hooks/useRotation";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
 import { CHAMPION_LIST_IMG_PATH } from "@/constants";
-import { Champion } from "@/types/shared/riot.api.types";
-import { getChampionList, getRotation } from "@/utils/server.api";
-import { useQuery } from "@tanstack/react-query";
 
 const RotationClientPage = () => {
   const {
-    data: championData,
-    isError: championError,
-    isPending: championPending,
-  } = useQuery({
-    queryKey: ["champion"],
-    queryFn: getChampionList,
-  });
+    isPending,
+    isError,
+    error,
+    maxNewUserLevel,
+    rotationList,
+    rotationListForNewUser,
+  } = useRotation();
 
-  const {
-    data: rotationData,
-    isError: rotationError,
-    isPending: rotationPending,
-  } = useQuery({
-    queryKey: ["rotation"],
-    queryFn: getRotation,
-  });
-  if (championError || championPending || rotationError || rotationPending)
-    return;
-  if (!championData || !rotationData) return;
-  const championList: Champion[] = Object.values(championData);
-  const freeChampionList: Champion[] = championList.filter((item) =>
-    rotationData.freeChampionIds.map(String).includes(item.key)
-  );
-  const freeChampionIdsForNewPlayersList: Champion[] = championList.filter(
-    (item) =>
-      rotationData.freeChampionIdsForNewPlayers.map(String).includes(item.key)
-  );
+  if (isError) return <div>에러{`${error}`}</div>;
+  if (isPending) return <div>로딩</div>;
+
   return (
     <>
       <Title tag="h1" size="3xl" margin="md" align="center">
         금주의 무료 챔피언
       </Title>
       <ListGridContainer>
-        {freeChampionList.map((item) => (
+        {rotationList!.map((item) => (
           <ListCard
             key={item.id}
             item={item}
@@ -52,10 +34,10 @@ const RotationClientPage = () => {
         ))}
       </ListGridContainer>
       <Title tag="h1" size="3xl" margin="md" align="center">
-        금주의 신규유저 무료 챔피언(레벨 {rotationData.maxNewPlayerLevel}까지)
+        금주의 신규유저 무료 챔피언(레벨 {maxNewUserLevel}까지)
       </Title>
       <ListGridContainer>
-        {freeChampionIdsForNewPlayersList.map((item) => (
+        {rotationListForNewUser!.map((item) => (
           <ListCard
             key={item.id}
             item={item}
