@@ -46,7 +46,7 @@ const HomePage = () => {
         <Title tag="h1" size="xl" align="center" margin="lg">
           리그오브레전드 정보 앱
         </Title>
-        <Text size="md" align="center">
+        <Text size="md" align="center" oneLine={true}>
           Riot Games API로 뭘 했을까나
         </Text>
       </section>
