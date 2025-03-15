@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<ChildrenProps>) {
       >
         <Header />
         <Provider>
-          <main className="mt-24">{children}</main>
+          <main className="pt-16 md:20 lg:pt-24 bg-gray-200">{children}</main>
         </Provider>
       </body>
     </html>
