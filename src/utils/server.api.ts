@@ -6,7 +6,7 @@ import type {
   Item,
 } from "@/types/shared/riot.api.types";
 
-const getVersion: () => Promise<string[]> = async () => {
+const getVersion = async (): Promise<string[]> => {
   const res: Response = await fetch(
     "https://ddragon.leagueoflegends.com/api/versions.json"
   );
@@ -14,9 +14,9 @@ const getVersion: () => Promise<string[]> = async () => {
   return data;
 };
 
-export const getChampionList: () => Promise<
+export const getChampionList = async (): Promise<
   fetchReturnValue<Champion>
-> = async () => {
+> => {
   const version = await getVersion();
   const res: Response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version[0]}/data/ko_KR/champion.json`,
@@ -30,9 +30,9 @@ export const getChampionList: () => Promise<
   return data;
 };
 
-export const getChampionDetail: (
+export const getChampionDetail = async (
   id: string
-) => Promise<fetchReturnValue<ChampionDetail>> = async (id) => {
+): Promise<fetchReturnValue<ChampionDetail>> => {
   const version = await getVersion();
   const res: Response = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/${version[0]}/data/ko_KR/champion/${id}.json`,
@@ -44,7 +44,7 @@ export const getChampionDetail: (
   return data;
 };
 
-export const getRotation: () => Promise<ChampionRotation> = async () => {
+export const getRotation = async (): Promise<ChampionRotation> => {
   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
   if (!apiKey) throw new Error("RIOT_API_KEY가 설정되지 않았습니다.");
 
@@ -60,7 +60,7 @@ export const getRotation: () => Promise<ChampionRotation> = async () => {
   return data;
 };
 
-export const getItem: () => Promise<fetchReturnValue<Item>> = async () => {
+export const getItem = async (): Promise<fetchReturnValue<Item>> => {
   const res: Response = await fetch(
     "https://ddragon.leagueoflegends.com/cdn/14.5.1/data/ko_KR/item.json",
     {
