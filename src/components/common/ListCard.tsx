@@ -1,9 +1,8 @@
 import Image from "next/image";
+import type { ChildrenProps } from "@/types/shared/common.types";
+import type { ListCardProps } from "@/types/components/common.types";
 import Title from "./Title";
 import Text from "./Text";
-import { ChildrenProps } from "@/types/shared/common.types";
-import { ListCardProps } from "@/types/components/common.types";
-import Link from "next/link";
 
 const ListCard = ({ item, imgPath, imgHeight, imgWidth }: ListCardProps) => {
   return (
@@ -20,7 +19,7 @@ const ListCard = ({ item, imgPath, imgHeight, imgWidth }: ListCardProps) => {
         <Title tag="h2" size="sm" align="left" margin="none">
           {item.name}
         </Title>
-        <Text size="md" align="left">
+        <Text size="md" align="left" oneLine={true}>
           {"title" in item ? item.title : item.plaintext}
         </Text>
       </ContentsContainer>
