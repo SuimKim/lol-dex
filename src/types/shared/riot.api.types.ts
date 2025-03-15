@@ -97,7 +97,9 @@ export type Spell = {
 };
 
 export type ChampionRotation = {
-  [key: string]: number[];
+  freeChampionIds: number[];
+  freeChampionIdsForNewPlayers: number[];
+  maxNewPlayerLevel: number;
 };
 
 export type Item = {
