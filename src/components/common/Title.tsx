@@ -32,12 +32,12 @@ const Title = ({
     lg: "m-4 md:m-5 lg:m-6",
   };
 
-  const alignStyles = `text-${align}`;
+  const alignStyles: string = `text-${align}`;
 
-  const baseStyles =
+  const baseStyles: string =
     "font-bold justify-items-center whitespace-nowrap overflow-hidden text-ellipsis";
 
-  const styles = `${baseStyles} ${sizeStyles[size]} ${marginStyles[margin]} ${alignStyles}`;
+  const styles: string = `${baseStyles} ${sizeStyles[size]} ${marginStyles[margin]} ${alignStyles}`;
 
   return <Tag className={styles}>{children}</Tag>;
 };
