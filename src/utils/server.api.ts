@@ -5,6 +5,7 @@ import type {
   ChampionRotation,
   Item,
 } from "@/types/shared/riot.api.types";
+import { request } from "http";
 
 const getVersion = async (): Promise<string[]> => {
   const res: Response = await fetch(
@@ -45,20 +46,27 @@ export const getChampionDetail = async (
 };
 
 export const getRotation = async (): Promise<ChampionRotation> => {
-  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
-  if (!apiKey) throw new Error("RIOT_API_KEY가 설정되지 않았습니다.");
-
-  const res: Response = await fetch(
-    "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
-    {
-      headers: {
-        "X-Riot-Token": apiKey,
-      },
-    }
-  );
-  const data = await res.json();
+  const res: Response = await fetch("http://localhost:3000/api", {
+    method: "GET",
+  });
+  const data: ChampionRotation = await res.json();
   return data;
 };
+// export const getRotation = async (): Promise<ChampionRotation> => {
+//   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+//   if (!apiKey) throw new Error("RIOT_API_KEY가 설정되지 않았습니다.");
+
+//   const res: Response = await fetch(
+//     "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
+//     {
+//       headers: {
+//         "X-Riot-Token": apiKey,
+//       },
+//     }
+//   );
+//   const data = await res.json();
+//   return data;
+// };
 
 export const getItem = async (): Promise<fetchReturnValue<Item>> => {
   const res: Response = await fetch(
