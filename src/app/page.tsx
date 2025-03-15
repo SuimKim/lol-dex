@@ -39,7 +39,7 @@ const HomePage = () => {
         width={1920}
         height={831}
         alt="로고"
-        className="relative -top-10 -z-10"
+        className="relative -top-10"
         priority
       />
       <section className="text-center px-10">
