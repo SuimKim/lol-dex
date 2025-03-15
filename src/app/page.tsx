@@ -42,7 +42,7 @@ const HomePage = () => {
         className="relative -top-10 -z-10"
       />
       <section className="text-center px-10">
-        <Title tag="h1" size="4xl" align="center" margin="lg">
+        <Title tag="h1" size="xl" align="center" margin="lg">
           리그오브레전드 정보 앱
         </Title>
         <Text size="md" align="center">
@@ -74,7 +74,7 @@ const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardProps) => {
     <Link href={linkHref} className="flex flex-col items-center border-2 p-5">
       <Image src={imgSrc} alt={imgAlt} width={1920} height={1080} priority />
       <Spacer size="sm" />
-      <Title tag="h2" size="xl" align="center" margin="none">
+      <Title tag="h2" size="sm" align="center" margin="none">
         {textLabel}
       </Title>
     </Link>
