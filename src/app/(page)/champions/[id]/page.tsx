@@ -1,12 +1,18 @@
 import Image from "next/image";
 import type { ChampionDetail, Spell } from "@/types/shared/riot.api.types";
-import type { Params, TitleContainerProps } from "@/types/pages/Champion.types";
+import type {
+  Params,
+  SkillSectionProps,
+  TipData,
+  TipSectionProps,
+  TitleContainerProps,
+} from "@/types/pages/Champion.types";
+import type { ChildrenProps } from "@/types/shared/common.types";
 import { getChampionDetail } from "@/utils/server.api";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
-import { CHAMPION_DETAIL_IMG_PATH, SPELL_IMG_PATH } from "@/constants";
-import { ChildrenProps } from "@/types/shared/common.types";
 import Spacer from "@/components/common/Spacer";
+import { CHAMPION_DETAIL_IMG_PATH, SPELL_IMG_PATH } from "@/constants";
 
 const DetailPage = async ({ params }: { params: Params }) => {
   const id: string = params.id;
@@ -14,7 +20,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
   const champion: ChampionDetail[] = Object.values(championData);
   const { name, title, lore, allytips, enemytips, spells } = champion[0];
 
-  const tipData = [
+  const tipData: TipData[] = [
     { title: "동맹팁", contents: allytips.map((tip) => tip) },
     { title: "공격팁", contents: enemytips.map((tip) => tip) },
   ];
@@ -74,14 +80,7 @@ const TitleSection = ({ title, name, lore }: TitleContainerProps) => {
   );
 };
 
-const TipSection = ({
-  list,
-}: {
-  list: {
-    title: string;
-    contents: string[];
-  };
-}) => {
+const TipSection = ({ list }: TipSectionProps) => {
   return (
     <>
       <section>
@@ -102,7 +101,7 @@ const TipSection = ({
   );
 };
 
-const SkillSection = ({ name, spells }: { name: string; spells: Spell[] }) => {
+const SkillSection = ({ name, spells }: SkillSectionProps) => {
   return (
     <>
       <Title tag="h3" size="sm" align="left" margin="none">
