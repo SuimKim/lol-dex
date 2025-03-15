@@ -8,7 +8,7 @@ const Header = () => {
     { href: "/rotation", label: "챔피언 로테이션" },
   ];
   return (
-    <header className="bg-gray-800 text-white p-4 fixed top-0 w-full">
+    <header className="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
       <nav className="flex justify-around">
         {navLinks.map((link, index) => (
           <Link className="hover:text-blue-500" key={index} href={link.href}>
