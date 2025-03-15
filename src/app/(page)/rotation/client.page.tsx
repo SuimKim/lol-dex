@@ -20,6 +20,7 @@ const RotationClientPage = () => {
   if (isError) return <div>에러{`${error}`}</div>;
   if (isPending) return <div>로딩</div>;
 
+  console.log("렌더링됨");
   return (
     <>
       <Title tag="h1" size="xl" margin="lg" align="center">
@@ -27,9 +28,8 @@ const RotationClientPage = () => {
       </Title>
       <ListGridContainer>
         {rotationList!.map((item) => (
-          <Link href={`/champions/${item.id}`}>
+          <Link href={`/champions/${item.id}`} key={item.id}>
             <ListCard
-              key={item.id}
               item={item}
               imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
               imgHeight={560}
@@ -43,9 +43,8 @@ const RotationClientPage = () => {
       </Title>
       <ListGridContainer>
         {rotationListForNewUser!.map((item) => (
-          <Link href={`/champions/${item.id}`}>
+          <Link href={`/champions/${item.id}`} key={item.id}>
             <ListCard
-              key={item.id}
               item={item}
               imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
               imgHeight={560}

@@ -17,9 +17,8 @@ const ChampionPage = async () => {
       </Title>
       <ListGridContainer>
         {championList.map((item) => (
-          <Link href={`/champions/${item.id}`}>
+          <Link href={`/champions/${item.id}`} key={item.id}>
             <ListCard
-              key={item.id}
               item={item}
               imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
               imgHeight={560}

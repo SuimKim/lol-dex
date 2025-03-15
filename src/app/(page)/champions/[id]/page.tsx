@@ -37,8 +37,8 @@ const DetailPage = async ({ params }: { params: Params }) => {
       />
       <ContentsContainer>
         <TitleSection title={title} name={name} lore={lore} />
-        {tipData.map((list) => (
-          <TipSection list={list} />
+        {tipData.map((list, index) => (
+          <TipSection list={list} key={index} />
         ))}
         <SkillSection name={name} spells={spells} />
       </ContentsContainer>
