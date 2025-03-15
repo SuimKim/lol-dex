@@ -1,11 +1,12 @@
+import { CHAMPION, HOME, ITEMS, ROTATIONS } from "@/constants";
 import Link from "next/link";
 
 const Header = () => {
   const navLinks = [
-    { href: "/", label: "홈" },
-    { href: "/champions", label: "챔피언" },
-    { href: "/items", label: "아이템" },
-    { href: "/rotation", label: "로테이션" },
+    { href: HOME, label: "홈" },
+    { href: CHAMPION, label: "챔피언" },
+    { href: ITEMS, label: "아이템" },
+    { href: ROTATIONS, label: "로테이션" },
   ];
   return (
     <header className="bg-gray-800 text-white p-4 fixed top-0 w-full z-10">
