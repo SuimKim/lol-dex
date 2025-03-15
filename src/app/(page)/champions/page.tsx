@@ -4,7 +4,7 @@ import { getChampionList } from "@/utils/server.api";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
-import { CHAMPION_LIST_IMG_PATH } from "@/constants";
+import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 
 const ChampionPage = async () => {
   const championData = await getChampionList();
@@ -17,7 +17,7 @@ const ChampionPage = async () => {
       </Title>
       <ListGridContainer>
         {championList.map((item) => (
-          <Link href={`/champions/${item.id}`} key={item.id}>
+          <Link href={`${CHAMPION}/${item.id}`} key={item.id}>
             <ListCard
               item={item}
               imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
