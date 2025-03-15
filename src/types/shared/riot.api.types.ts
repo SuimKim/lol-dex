@@ -76,7 +76,6 @@ export type Spell = {
   cooldownBurn: string;
   cost: number[];
   costBurn: string;
-  datavalues: {};
   effect: (number[] | null)[];
   effectBurn: (string | null)[];
   vars: [];
