@@ -2,19 +2,20 @@ import { TextProps } from "@/types/components/common.types";
 /**
  * @component
  *
- * @prop {size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
+ * @prop {size} [size="md"] - 글자 크기 ("xl" | "sm" | "md" | "lg" | "xl")
  * @prop {align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
  */
 const Text = ({ size = "md", align = "left", children }: TextProps) => {
-  const baseStyles = "justify-items-center";
-
   const sizeStyles: Record<TextProps["size"], string> = {
     xs: "text-xs",
-    sm: "text-sm",
-    md: "text-md",
-    lg: "text-lg",
-    xl: "text-xl",
+    sm: "text-xs lg:text-sm",
+    md: "text-sm lg:text-md",
+    lg: "text-md lg:text-lg",
+    xl: "text-md md:text-lg lg:text-xl",
   };
+
+  const baseStyles =
+    "justify-items-center whitespace-nowrap overflow-hidden text-ellipsis";
 
   const alignStyles: string = `text-${align}`;
 
