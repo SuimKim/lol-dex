@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Champion } from "@/types/shared/riot.api.types";
 import { getChampionList } from "@/utils/server.api";
 import ListCard from "@/components/common/ListCard";
@@ -11,16 +12,19 @@ const ChampionPage = async () => {
 
   return (
     <>
-      <Title tag="h1" size="3xl" margin="md" align="center">
+      <Title tag="h1" size="xl" margin="lg" align="center">
         챔피언 목록
       </Title>
       <ListGridContainer>
         {championList.map((item) => (
-          <ListCard
-            key={item.id}
-            item={item}
-            imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
-          />
+          <Link href={`/champions/${item.id}`} key={item.id}>
+            <ListCard
+              item={item}
+              imgPath={`${CHAMPION_LIST_IMG_PATH}/${item.id}_0.jpg`}
+              imgHeight={560}
+              imgWidth={308}
+            />
+          </Link>
         ))}
       </ListGridContainer>
     </>

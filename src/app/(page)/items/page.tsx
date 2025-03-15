@@ -10,7 +10,7 @@ const page = async () => {
   const itemList: Item[] = Object.values(itemData);
   return (
     <>
-      <Title tag="h1" size="3xl" margin="md" align="center">
+      <Title tag="h1" size="xl" margin="lg" align="center">
         아이템 목록
       </Title>
       <ListGridContainer>
@@ -19,6 +19,8 @@ const page = async () => {
             key={item.name}
             item={item}
             imgPath={`${ITEM_IMG_PATH}/${item.image.full}`}
+            imgHeight={100}
+            imgWidth={100}
           />
         ))}
       </ListGridContainer>

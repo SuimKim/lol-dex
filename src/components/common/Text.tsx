@@ -2,24 +2,34 @@ import { TextProps } from "@/types/components/common.types";
 /**
  * @component
  *
- * @prop {size} [size="xl"] - 글자 크기 ("xl" | "2xl" | "3xl" | "4xl" | "5xl")
+ * @prop {size} [size="md"] - 글자 크기 ("xl" | "sm" | "md" | "lg" | "xl")
  * @prop {align} [align="left"] - 정렬 위치 ("left" | "center" | "right")
  */
-const Text = ({ size = "md", align = "left", children }: TextProps) => {
-  const baseStyles = "justify-items-center";
-
+const Text = ({
+  size = "md",
+  align = "left",
+  oneLine,
+  children,
+}: TextProps) => {
   const sizeStyles: Record<TextProps["size"], string> = {
     xs: "text-xs",
-    sm: "text-sm",
-    md: "text-md",
-    lg: "text-lg",
-    xl: "text-xl",
+    sm: "text-xs lg:text-sm",
+    md: "text-sm lg:text-md",
+    lg: "text-md lg:text-lg",
+    xl: "text-md md:text-lg lg:text-xl",
   };
 
+  const baseStyles: string = "justify-items-center";
   const alignStyles: string = `text-${align}`;
+  const oneLineStyle: string =
+    "whitespace-nowrap overflow-hidden text-ellipsis";
+
+  if (oneLine) {
+    const styles = `${baseStyles} ${sizeStyles[size]} ${alignStyles} ${oneLineStyle}`;
+    return <p className={styles}>{children}</p>;
+  }
 
   const styles = `${baseStyles} ${sizeStyles[size]} ${alignStyles}`;
-
   return <p className={styles}>{children}</p>;
 };
 
