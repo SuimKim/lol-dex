@@ -33,7 +33,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
         width={1080}
         height={637}
         priority
-        className="relative -top-2 md:-top-6 lg:-top-10"
+        className="relative -top-3 md:-top-7 lg:-top-11"
       />
       <ContentsContainer>
         <TitleSection title={title} name={name} lore={lore} />

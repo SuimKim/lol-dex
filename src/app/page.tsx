@@ -39,15 +39,15 @@ const HomePage = () => {
         width={1920}
         height={831}
         alt="로고"
-        className="relative -top-10"
+        className="relative -top-3 md:-top-7 lg:-top-11"
         priority
       />
       <section className="text-center px-10">
         <Title tag="h1" size="xl" align="center" margin="lg">
           리그오브레전드 정보 앱
         </Title>
-        <Text size="md" align="center" oneLine={true}>
-          Riot Games API로 뭘 했을까나
+        <Text size="md" align="center" oneLine={false}>
+          Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
         </Text>
       </section>
       <Spacer size="md" />
