@@ -11,7 +11,7 @@ export type TextProps = ChildrenProps & {
 export type TitleProps = ChildrenProps & {
   tag: "h1" | "h2" | "h3" | "h4";
   size: "sm" | "md" | "lg" | "xl";
-  margin: "none" | "sm" | "md" | "lg" | "xl" | "2xl";
+  margin: "none" | "sm" | "md" | "lg";
   align: "left" | "center" | "right";
 };
 
