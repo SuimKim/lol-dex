@@ -10,7 +10,7 @@ export type TextProps = ChildrenProps & {
 // "@/components/common/Title.tsx"
 export type TitleProps = ChildrenProps & {
   tag: "h1" | "h2" | "h3" | "h4";
-  size: "xl" | "2xl" | "3xl" | "4xl" | "5xl";
+  size: "sm" | "md" | "lg" | "xl";
   margin: "none" | "sm" | "md" | "lg" | "xl" | "2xl";
   align: "left" | "center" | "right";
 };
@@ -19,4 +19,6 @@ export type TitleProps = ChildrenProps & {
 export type ListCardProps = {
   item: Champion | Item;
   imgPath: string;
+  imgHeight: number;
+  imgWidth: number;
 };
