@@ -18,11 +18,10 @@ const Title = ({
   const Tag = tag;
 
   const sizeStyles: Record<TitleProps["size"], string> = {
-    xl: "text-xl",
-    "2xl": "text-2xl",
-    "3xl": "text-3xl",
-    "4xl": "text-4xl",
-    "5xl": "text-5xl",
+    sm: "text-md md:text-lg lg:text-xl",
+    md: "text-lg md:text-xl lg:text-2xl",
+    lg: "text-xl md:text-2xl lg:text-3xl",
+    xl: "text-2xl md:text-3xl lg:text-4xl",
   };
 
   const marginStyles: Record<TitleProps["margin"], string> = {
@@ -36,7 +35,8 @@ const Title = ({
 
   const alignStyles = `text-${align}`;
 
-  const baseStyles = "font-bold justify-items-center";
+  const baseStyles =
+    "font-bold justify-items-center whitespace-nowrap overflow-hidden text-ellipsis";
 
   const styles = `${baseStyles} ${sizeStyles[size]} ${marginStyles[margin]} ${alignStyles}`;
 
