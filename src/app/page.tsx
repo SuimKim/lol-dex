@@ -46,7 +46,7 @@ const HomePage = () => {
           리그오브레전드 정보 앱
         </Title>
         <Text size="md" align="center">
-          Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
+          Riot Games API로 뭘 했을까나
         </Text>
       </section>
       <Spacer size="md" />
