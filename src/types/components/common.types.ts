@@ -5,6 +5,7 @@ import { ChildrenProps } from "../shared/common.types";
 export type TextProps = ChildrenProps & {
   size: "xs" | "sm" | "md" | "lg" | "xl";
   align: "left" | "center" | "right";
+  oneLine: boolean;
 };
 
 // "@/components/common/Title.tsx"
