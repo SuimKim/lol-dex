@@ -16,10 +16,7 @@ export type TitleContainerProps = {
 };
 
 export type TipSectionProps = {
-  list: {
-    title: string;
-    contents: string[];
-  };
+  list: TipData;
 };
 
 export type SkillSectionProps = { name: string; spells: Spell[] };

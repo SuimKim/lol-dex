@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { MainCardData, MainCardProps } from "@/types/pages/Home.types";
+import type { MainCardData } from "@/types/pages/Home.types";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 import Spacer from "@/components/common/Spacer";
@@ -71,7 +71,7 @@ const HomePage = () => {
 };
 export default HomePage;
 
-const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardProps) => {
+const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardData) => {
   return (
     <Link href={linkHref} className="flex flex-col items-center border-2 p-5">
       <Image src={imgSrc} alt={imgAlt} width={1920} height={1080} priority />

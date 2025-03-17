@@ -4,10 +4,3 @@ export type MainCardData = {
   imgAlt: string;
   textLabel: string;
 };
-
-export type MainCardProps = {
-  linkHref: string;
-  imgSrc: string;
-  imgAlt: string;
-  textLabel: string;
-};

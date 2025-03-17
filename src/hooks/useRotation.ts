@@ -4,7 +4,7 @@ import type { UseRotationReturnValue } from "@/types/shared/common.types";
 import { getChampionList, getRotation } from "@/utils/server.api";
 import { makeRotationList } from "@/utils/makeRotationList";
 
-const useRotation = (): UseRotationReturnValue => {
+const useRotation = (): Partial<UseRotationReturnValue> => {
   const championQuery = useQuery({
     queryKey: ["champion"],
     queryFn: getChampionList,
