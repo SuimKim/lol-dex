@@ -33,7 +33,6 @@ const DetailPage = async ({ params }: { params: Params }) => {
         width={1080}
         height={637}
         priority
-        className="relative -top-3 md:-top-7 lg:-top-11"
       />
       <ContentsContainer>
         <TitleSection title={title} name={name} lore={lore} />
@@ -42,6 +41,7 @@ const DetailPage = async ({ params }: { params: Params }) => {
         ))}
         <SkillSection name={name} spells={spells} />
       </ContentsContainer>
+      <Spacer size="sm" />
     </DetailContainer>
   );
 };
@@ -58,7 +58,7 @@ const DetailContainer = ({ children }: ChildrenProps) => {
 
 const ContentsContainer = ({ children }: ChildrenProps) => {
   return (
-    <div className="m-5 md:my-5 lg:m-0 p-3 md:p-5 lg:p-7 bg-white">
+    <div className="md:m-5 lg:m-0 lg:my-5 m-5 p-3 md:p-5 lg:p-7 bg-white">
       {children}
     </div>
   );

@@ -30,9 +30,7 @@ export default function RootLayout({
       >
         <Header />
         <Provider>
-          <main className="pt-16 md:pt-20 lg:pt-24 pb-1 bg-gray-200">
-            {children}
-          </main>
+          <main className="relative top-12 bg-gray-200">{children}</main>
         </Provider>
       </body>
     </html>

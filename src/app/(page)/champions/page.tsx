@@ -5,6 +5,7 @@ import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
 import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
+import Spacer from "@/components/common/Spacer";
 
 const ChampionPage = async () => {
   const championData = await getChampionList();
@@ -12,7 +13,8 @@ const ChampionPage = async () => {
 
   return (
     <>
-      <Title tag="h1" size="xl" margin="lg" align="center">
+      <Spacer size="md" />
+      <Title tag="h1" size="xl" margin="none" align="center">
         챔피언 목록
       </Title>
       <ListGridContainer>
@@ -27,6 +29,7 @@ const ChampionPage = async () => {
           </Link>
         ))}
       </ListGridContainer>
+      <Spacer size="sm" />
     </>
   );
 };

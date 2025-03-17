@@ -13,7 +13,6 @@ const ListCard = ({ item, imgPath, imgHeight, imgWidth }: ListCardProps) => {
         height={imgWidth}
         alt="아이템 이미지"
         className="w-full"
-        priority
       />
       <ContentsContainer>
         <Title tag="h2" size="sm" align="left" margin="none">
