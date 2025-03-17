@@ -40,10 +40,10 @@ const HomePage = () => {
         width={1920}
         height={831}
         alt="로고"
-        className="relative -top-3 md:-top-7 lg:-top-11"
         priority
       />
-      <section className="text-center px-10">
+      <Spacer size="lg" />
+      <section className="text-center">
         <Title tag="h1" size="xl" align="center" margin="lg">
           리그오브레전드 정보 앱
         </Title>
