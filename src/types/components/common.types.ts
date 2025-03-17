@@ -11,6 +11,7 @@ export type TitleProps = ChildrenProps & {
 
 // "@/components/common/Text.tsx"
 export type TextProps = Omit<TitleProps, "tag" | "margin"> & {
+  size: Exclude<TitleProps["size"], "extra">;
   oneLine: boolean;
 };
 
