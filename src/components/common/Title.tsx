@@ -23,6 +23,7 @@ const Title = ({
     md: "text-lg md:text-xl lg:text-2xl",
     lg: "text-xl md:text-2xl lg:text-3xl",
     xl: "text-2xl md:text-3xl lg:text-4xl",
+    extra: "text-5xl md:6xl lg:text-7xl",
   };
 
   const marginStyles: Record<TitleProps["margin"], string> = {
