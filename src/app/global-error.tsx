@@ -1,26 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useTransition } from "react";
 import Error from "@/components/layouts/Error";
 
-const GlobalErrorPage = ({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) => {
-  useEffect(() => {
-    console.log("error", error);
-  }, [error]);
+const GlobalErrorPage = ({ reset }: { reset: () => void }) => {
+  const [isPending, startTransition] = useTransition();
+
+  const handleReset = () => {
+    startTransition(() => {
+      reset();
+    });
+  };
 
   return (
     <Error errorMessage="큰일이에요! 예기치 않은 오류가 발생했습니다.">
       <button
-        onClick={() => reset()}
+        onClick={handleReset}
         className="rounded-md bg-gray-800 w-32 py-2.5 text-sm font-semibold text-white hover:bg-gray-500"
+        disabled={isPending}
       >
-        Try Again
+        {isPending ? "Try Again 중..." : "Try Again"}
       </button>
     </Error>
   );
