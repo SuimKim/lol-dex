@@ -58,7 +58,7 @@ const DetailContainer = ({ children }: ChildrenProps) => {
 
 const ContentsContainer = ({ children }: ChildrenProps) => {
   return (
-    <div className="m-5 md:my-5 lg:m-0 p-3 md:p-5 lg:p-7 bg-white">
+    <div className="md:m-5 lg:m-0 lg:my-5 m-5 p-3 md:p-5 lg:p-7 bg-white">
       {children}
     </div>
   );
