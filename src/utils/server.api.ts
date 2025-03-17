@@ -55,21 +55,6 @@ export const getRotation = async (): Promise<ChampionRotation> => {
   const data: ChampionRotation = await res.json();
   return data;
 };
-// export const getRotation = async (): Promise<ChampionRotation> => {
-//   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
-//   if (!apiKey) throw new Error("RIOT_API_KEY가 설정되지 않았습니다.");
-
-//   const res: Response = await fetch(
-//     "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
-//     {
-//       headers: {
-//         "X-Riot-Token": apiKey,
-//       },
-//     }
-//   );
-//   const data = await res.json();
-//   return data;
-// };
 
 export const getItem = async (): Promise<fetchReturnValue<Item>> => {
   console.log("아이템 API 호출 시간:", new Date().toISOString());
