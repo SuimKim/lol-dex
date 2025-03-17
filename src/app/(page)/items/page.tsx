@@ -4,13 +4,15 @@ import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
 import { ITEM_IMG_PATH } from "@/constants";
+import Spacer from "@/components/common/Spacer";
 
 const page = async () => {
   const itemData = await getItem();
   const itemList: Item[] = Object.values(itemData);
   return (
     <>
-      <Title tag="h1" size="xl" margin="lg" align="center">
+      <Spacer size="md" />
+      <Title tag="h1" size="xl" margin="none" align="center">
         아이템 목록
       </Title>
       <ListGridContainer>
@@ -24,6 +26,7 @@ const page = async () => {
           />
         ))}
       </ListGridContainer>
+      <Spacer size="sm" />
     </>
   );
 };

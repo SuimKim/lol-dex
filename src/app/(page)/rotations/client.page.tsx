@@ -6,6 +6,7 @@ import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
 import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
+import Spacer from "@/components/common/Spacer";
 
 const RotationClientPage = () => {
   const {
@@ -22,7 +23,8 @@ const RotationClientPage = () => {
 
   return (
     <>
-      <Title tag="h1" size="xl" margin="lg" align="center">
+      <Spacer size="md" />
+      <Title tag="h1" size="xl" margin="none" align="center">
         금주의 무료 챔피언
       </Title>
       <ListGridContainer>
@@ -52,6 +54,7 @@ const RotationClientPage = () => {
           </Link>
         ))}
       </ListGridContainer>
+      <Spacer size="sm" />
     </>
   );
 };
