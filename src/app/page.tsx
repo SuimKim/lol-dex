@@ -73,7 +73,10 @@ export default HomePage;
 
 const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardData) => {
   return (
-    <Link href={linkHref} className="flex flex-col items-center border-2 p-5">
+    <Link
+      href={linkHref}
+      className="flex flex-col items-center border-2 p-5 max-w-[600px]"
+    >
       <Image src={imgSrc} alt={imgAlt} width={1920} height={1080} priority />
       <Spacer size="sm" />
       <Title tag="h2" size="sm" align="center" margin="none">
