@@ -3,7 +3,7 @@
 import { ThemeProvider } from "next-themes";
 import type { ChildrenProps } from "@/types/shared/common.types";
 
-const ThemeProviders = ({ children }: ChildrenProps) => {
+const DarkModeProvider = ({ children }: ChildrenProps) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       {children}
@@ -11,4 +11,4 @@ const ThemeProviders = ({ children }: ChildrenProps) => {
   );
 };
 
-export default ThemeProviders;
+export default DarkModeProvider;
