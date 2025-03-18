@@ -22,3 +22,10 @@ export type ListCardProps = {
   imgHeight: number;
   imgWidth: number;
 };
+
+// "@/components/common/SkeletonImage.tsx"
+export type SkeltonImage = Omit<ListCardProps, "item"> & {
+  alt: string;
+  priority?: boolean;
+  className?: string;
+};

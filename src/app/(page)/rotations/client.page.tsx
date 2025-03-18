@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import useRotation from "@/hooks/useRotation";
+import Loading from "@/app/loading";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
-import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 import Spacer from "@/components/common/Spacer";
+import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 
 const RotationClientPage = () => {
   const {
@@ -18,8 +19,8 @@ const RotationClientPage = () => {
     rotationListForNewUser,
   } = useRotation();
 
-  if (isError) return <div>에러{`${error}`}</div>;
-  if (isPending) return <div>로딩</div>;
+  if (isError) throw error;
+  if (isPending) return <Loading />;
 
   return (
     <>

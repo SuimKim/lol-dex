@@ -13,6 +13,7 @@ import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 import Spacer from "@/components/common/Spacer";
 import { CHAMPION_DETAIL_IMG_PATH, SPELL_IMG_PATH } from "@/constants";
+import SkeletonImage from "@/components/common/SkeletonImage";
 
 const DetailPage = async ({ params }: { params: Params }) => {
   const id: string = params.id;
@@ -27,11 +28,11 @@ const DetailPage = async ({ params }: { params: Params }) => {
 
   return (
     <DetailContainer>
-      <Image
-        src={`${CHAMPION_DETAIL_IMG_PATH}/${id}_0.jpg`}
+      <SkeletonImage
+        imgPath={`${CHAMPION_DETAIL_IMG_PATH}/${id}_0.jpg`}
         alt="챔피언 이미지"
-        width={1080}
-        height={637}
+        imgWidth={1080}
+        imgHeight={637}
         priority
       />
       <ContentsContainer>
