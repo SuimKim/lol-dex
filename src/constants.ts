@@ -40,3 +40,16 @@ export const MAIN_CARD_DATA: MainCardData[] = [
     textLabel: "아이템 목록 보기",
   },
 ];
+
+export const QUERY_KEY = {
+  CHAMPION: ["champion"],
+  ROTATION: ["rotation"],
+};
+
+export const GET_VERSION_URL: string =
+  "https://ddragon.leagueoflegends.com/api/versions.json";
+
+export const GET_ITEMS_URL: string =
+  "https://ddragon.leagueoflegends.com/cdn/14.5.1/data/ko_KR/item.json";
+
+export const MY_BUILD_URL: string = "https://lol-dex-two.vercel.app/api";
