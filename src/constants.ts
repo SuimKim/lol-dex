@@ -52,4 +52,4 @@ export const GET_VERSION_URL: string =
 export const GET_ITEMS_URL: string =
   "https://ddragon.leagueoflegends.com/cdn/14.5.1/data/ko_KR/item.json";
 
-export const MY_BUILD_URL: string = "https://lol-dex-suim.vercel.app/api";
+export const MY_BUILD_URL: string = "/api";
