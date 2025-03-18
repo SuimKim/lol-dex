@@ -4,8 +4,8 @@ import { getChampionList } from "@/utils/server.api";
 import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
 import Title from "@/components/common/Title";
-import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 import Spacer from "@/components/common/Spacer";
+import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 
 const ChampionPage = async () => {
   const championData = await getChampionList();
