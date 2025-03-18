@@ -5,6 +5,7 @@ import DarkModeProvider from "@/app/provider/DarkModeProvider";
 import QueryProvider from "@/app/provider/QueryProvider";
 import Header from "@/components/layouts/header/Header";
 import Spacer from "@/components/common/Spacer";
+import Footer from "@/components/layouts/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +42,7 @@ export default function RootLayout({
               {children}
             </main>
           </QueryProvider>
-          <footer>푸터입니다</footer>
+          <Footer />
         </DarkModeProvider>
       </body>
     </html>
