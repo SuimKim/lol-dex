@@ -29,10 +29,10 @@ const DetailPage = async ({ params }: { params: Params }) => {
   return (
     <DetailContainer>
       <SkeletonImage
-        src={`${CHAMPION_DETAIL_IMG_PATH}/${id}_0.jpg`}
+        imgPath={`${CHAMPION_DETAIL_IMG_PATH}/${id}_0.jpg`}
         alt="챔피언 이미지"
-        width={1080}
-        height={637}
+        imgWidth={1080}
+        imgHeight={637}
         priority
       />
       <ContentsContainer>

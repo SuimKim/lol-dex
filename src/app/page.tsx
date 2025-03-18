@@ -45,9 +45,9 @@ export default HomePage;
 const Logo = () => {
   return (
     <SkeletonImage
-      src="https://brand.riotgames.com/static/3448a13646eaa89d5c6c7d4bf0f5a7b6/ae35d/logo-d-4x-zoom-rendered-00.webp"
-      width={1920}
-      height={831}
+      imgPath="https://brand.riotgames.com/static/3448a13646eaa89d5c6c7d4bf0f5a7b6/ae35d/logo-d-4x-zoom-rendered-00.webp"
+      imgWidth={1920}
+      imgHeight={831}
       alt="로고"
       priority
     />
@@ -61,10 +61,10 @@ const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardData) => {
       className="flex flex-col items-center border-2 p-5 max-w-[600px]"
     >
       <SkeletonImage
-        src={imgSrc}
+        imgPath={imgSrc}
         alt={imgAlt}
-        width={1920}
-        height={1080}
+        imgWidth={1920}
+        imgHeight={1080}
         priority
       />
       <Spacer size="sm" />

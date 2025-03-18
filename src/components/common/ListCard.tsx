@@ -8,9 +8,9 @@ const ListCard = ({ item, imgPath, imgHeight, imgWidth }: ListCardProps) => {
   return (
     <CardContainer>
       <SkeletonImage
-        src={imgPath}
-        width={imgHeight}
-        height={imgWidth}
+        imgPath={imgPath}
+        imgHeight={imgHeight}
+        imgWidth={imgWidth}
         alt="아이템 이미지"
         className="w-full"
       />
