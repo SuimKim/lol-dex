@@ -4,7 +4,7 @@ import "@/app/globals.css";
 import DarkModeProvider from "@/app/provider/DarkModeProvider";
 import QueryProvider from "@/app/provider/QueryProvider";
 import Spacer from "@/components/common/Spacer";
-import Header from "@/components/layouts/header/Header";
+import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 
 const geistSans = localFont({
