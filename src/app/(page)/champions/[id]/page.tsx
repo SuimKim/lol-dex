@@ -120,7 +120,7 @@ const SkillSection = ({ name, spells }: SkillSectionProps) => {
 const SkillCard = ({ spell }: { spell: Spell }) => {
   return (
     <>
-      <div className="border-2 p-3 flex gap-3">
+      <div className="border-2 p-3 flex gap-3 dark:border-gray-900">
         <Image
           src={`${SPELL_IMG_PATH}/${spell.image.full}`}
           alt="스킬 이미지"
