@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import DarkModeProvider from "@/app/provider/DarkModeProvider";
 import QueryProvider from "@/app/provider/QueryProvider";
 import Header from "@/components/layouts/header/Header";
+import Spacer from "@/components/common/Spacer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,10 +36,12 @@ export default function RootLayout({
         <DarkModeProvider>
           <Header />
           <QueryProvider>
-            <main className="relative top-12 bg-gray-200 dark:bg-gray-900">
+            <main className="bg-gray-200 dark:bg-gray-900">
+              <Spacer size="lg"></Spacer>
               {children}
             </main>
           </QueryProvider>
+          <footer>푸터입니다</footer>
         </DarkModeProvider>
       </body>
     </html>
