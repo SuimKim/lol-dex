@@ -6,7 +6,7 @@ const Loading = () => {
     <>
       <section className="h-screen grid place-items-center">
         <div>
-          <Title tag="h2" margin="none" size="xl" align="center">
+          <Title tag="h1" margin="none" size="xl" align="center">
             😵 LOADING... 😵
           </Title>
           <Spacer size="lg" />
