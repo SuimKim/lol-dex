@@ -13,7 +13,7 @@ const ChampionPage = async () => {
 
   return (
     <>
-      <Spacer size="md" />
+      <Spacer size="lg" />
       <Title tag="h1" size="xl" margin="none" align="center">
         챔피언 목록
       </Title>

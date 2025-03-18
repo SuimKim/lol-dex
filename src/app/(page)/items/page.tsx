@@ -11,7 +11,7 @@ const page = async () => {
   const itemList: Item[] = Object.values(itemData);
   return (
     <>
-      <Spacer size="md" />
+      <Spacer size="lg" />
       <Title tag="h1" size="xl" margin="none" align="center">
         아이템 목록
       </Title>
