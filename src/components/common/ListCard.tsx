@@ -1,13 +1,13 @@
-import Image from "next/image";
 import type { ChildrenProps } from "@/types/shared/common.types";
 import type { ListCardProps } from "@/types/components/common.types";
-import Title from "./Title";
-import Text from "./Text";
+import Title from "@/components/common/Title";
+import Text from "@/components/common/Text";
+import SkeletonImage from "@/components/common/SkeletonImage";
 
 const ListCard = ({ item, imgPath, imgHeight, imgWidth }: ListCardProps) => {
   return (
     <CardContainer>
-      <Image
+      <SkeletonImage
         src={imgPath}
         width={imgHeight}
         height={imgWidth}

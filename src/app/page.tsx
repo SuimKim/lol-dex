@@ -4,6 +4,7 @@ import type { MainCardData } from "@/types/pages/Home.types";
 import Text from "@/components/common/Text";
 import Title from "@/components/common/Title";
 import Spacer from "@/components/common/Spacer";
+import SkeletonImage from "@/components/common/SkeletonImage";
 import { MAIN_CARD_DATA } from "@/constants";
 
 const HomePage = () => {
@@ -43,10 +44,8 @@ export default HomePage;
 
 const Logo = () => {
   return (
-    <Image
-      src={
-        "https://brand.riotgames.com/static/3448a13646eaa89d5c6c7d4bf0f5a7b6/ae35d/logo-d-4x-zoom-rendered-00.webp"
-      }
+    <SkeletonImage
+      src="https://brand.riotgames.com/static/3448a13646eaa89d5c6c7d4bf0f5a7b6/ae35d/logo-d-4x-zoom-rendered-00.webp"
       width={1920}
       height={831}
       alt="로고"
@@ -61,7 +60,13 @@ const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardData) => {
       href={linkHref}
       className="flex flex-col items-center border-2 p-5 max-w-[600px]"
     >
-      <Image src={imgSrc} alt={imgAlt} width={1920} height={1080} priority />
+      <SkeletonImage
+        src={imgSrc}
+        alt={imgAlt}
+        width={1920}
+        height={1080}
+        priority
+      />
       <Spacer size="sm" />
       <Title tag="h2" size="sm" align="center" margin="none">
         {textLabel}
