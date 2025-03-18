@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { MainCardData } from "@/types/pages/Home.types";
 import Text from "@/components/common/Text";
