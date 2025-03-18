@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { CHAMPION, HOME, ITEMS, ROTATIONS } from "@/constants";
 import DarkToggle from "./DarkToggle";
+import { CHAMPION, HOME, ITEMS, ROTATIONS } from "@/constants";
 
 const Header = () => {
   const navLinks = [
