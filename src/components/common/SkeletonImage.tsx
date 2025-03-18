@@ -20,7 +20,7 @@ const SkeletonImage = ({
       style={{ aspectRatio: `${imgWidth}/${imgHeight}` }}
     >
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-300 animate-pulse rounded" />
+        <div className="absolute inset-0 bg-gray-300 dark:bg-gray-800 animate-pulse rounded" />
       )}
       <Image
         src={imgPath}

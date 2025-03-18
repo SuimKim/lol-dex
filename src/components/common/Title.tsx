@@ -36,7 +36,7 @@ const Title = ({
   const alignStyles: string = `text-${align}`;
 
   const baseStyles: string =
-    "font-bold justify-items-center whitespace-nowrap overflow-hidden text-ellipsis";
+    "font-bold justify-items-center whitespace-nowrap overflow-hidden text-ellipsis dark:text-gray-200";
 
   const styles: string = `${baseStyles} ${sizeStyles[size]} ${marginStyles[margin]} ${alignStyles}`;
 
