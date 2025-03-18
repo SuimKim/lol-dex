@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { ChildrenProps } from "@/types/shared/common.types";
 
-const Provider = ({ children }: ChildrenProps) => {
+const QueryProvider = ({ children }: ChildrenProps) => {
   const queryClient = new QueryClient();
 
   return (
@@ -15,4 +15,4 @@ const Provider = ({ children }: ChildrenProps) => {
   );
 };
 
-export default Provider;
+export default QueryProvider;
