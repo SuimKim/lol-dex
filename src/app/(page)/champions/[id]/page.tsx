@@ -59,7 +59,7 @@ const DetailContainer = ({ children }: ChildrenProps) => {
 
 const ContentsContainer = ({ children }: ChildrenProps) => {
   return (
-    <div className="md:m-5 lg:m-0 lg:my-5 m-5 p-3 md:p-5 lg:p-7 bg-white">
+    <div className="md:m-5 lg:m-0 lg:my-5 m-5 p-3 md:p-5 lg:p-7 bg-white dark:bg-black">
       {children}
     </div>
   );
@@ -120,7 +120,7 @@ const SkillSection = ({ name, spells }: SkillSectionProps) => {
 const SkillCard = ({ spell }: { spell: Spell }) => {
   return (
     <>
-      <div className="border-2 p-3 flex gap-3">
+      <div className="border-2 p-3 flex gap-3 dark:border-gray-900">
         <Image
           src={`${SPELL_IMG_PATH}/${spell.image.full}`}
           alt="스킬 이미지"

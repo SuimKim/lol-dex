@@ -57,7 +57,7 @@ const MainCard = ({ linkHref, imgSrc, imgAlt, textLabel }: MainCardData) => {
   return (
     <Link
       href={linkHref}
-      className="flex flex-col items-center border-2 p-5 max-w-[600px]"
+      className="flex flex-col items-center border-2 border-gray-500 p-5 max-w-[600px]"
     >
       <SkeletonImage
         imgPath={imgSrc}

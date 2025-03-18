@@ -19,7 +19,7 @@ const Text = ({
     xl: "text-md md:text-lg lg:text-xl",
   };
 
-  const baseStyles: string = "justify-items-center";
+  const baseStyles: string = "justify-items-center dark:text-gray-400";
   const alignStyles: string = `text-${align}`;
   const oneLineStyle: string =
     "whitespace-nowrap overflow-hidden text-ellipsis";
