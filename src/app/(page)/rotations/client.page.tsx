@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import type { Champion } from "@/types/shared/riot.api.types";
 import useRotation from "@/hooks/useRotation";
 import Loading from "@/app/loading";
-import ListCard from "@/components/common/ListCard";
 import ListGridContainer from "@/components/common/ListGridContainer";
-import Title from "@/components/common/Title";
+import ListCard from "@/components/common/ListCard";
 import Spacer from "@/components/common/Spacer";
-import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
-import { useEffect, useState } from "react";
-import { Champion } from "@/types/shared/riot.api.types";
 import Text from "@/components/common/Text";
+import Title from "@/components/common/Title";
+import { CHAMPION, CHAMPION_LIST_IMG_PATH } from "@/constants";
 
 const RotationClientPage = () => {
   const {
