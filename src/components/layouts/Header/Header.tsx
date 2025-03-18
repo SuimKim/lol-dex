@@ -14,7 +14,7 @@ const Header = () => {
       <nav className="flex justify-around">
         {navLinks.map((link, index) => (
           <Link
-            className="hover:text-blue-500 text-sm"
+            className="hover:text-blue-500 text-sm lg:text-lg"
             key={index}
             href={link.href}
           >
